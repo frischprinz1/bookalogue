@@ -1,0 +1,30 @@
+{
+    "name": "bookalogue",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "client-install": "npm install --prefix client",
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "node --inspect ./server/server.js --ignore ./server/data.json",
+        "client": "npm run dev --prefix client",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/frischprinz1/bookalogue.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/frischprinz1/bookalogue/issues"
+    },
+    "homepage": "https://github.com/frischprinz1/bookalogue#readme",
+    "dependencies": {
+        "concurrently": "^7.1.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.3",
+        "uuid": "^8.3.2"
+    }
+}
